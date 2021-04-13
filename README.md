@@ -11,6 +11,7 @@ Before you can build this project, you must install and configure the following 
 
 After installing Node, you should be able to run the following command to install development tools.
 You will only need to run this command when dependencies change in [package.json](package.json).
+(note: navigate to the project folder from the terminal or other command line tool: this is where you need to located vefore you run the command)
 
 ```
 npm install

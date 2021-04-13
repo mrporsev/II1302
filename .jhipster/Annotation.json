@@ -1,0 +1,41 @@
+{
+  "name": "Annotation",
+  "fields": [
+    {
+      "fieldName": "smiley",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "textBox",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sensor",
+      "otherEntityRelationshipName": "annotation",
+      "relationshipName": "sensor",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "not an ignored comment",
+  "entityTableName": "annotation",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210413135052"
+}

@@ -1,0 +1,26 @@
+entity Sensor {
+    humidity String
+    soilMoisture String
+    light String
+    name String
+}
+
+entity User {
+    
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Annotation {
+    smiley String required
+    textBox TextBlob required
+    date Instant required
+}
+
+relationship ManyToOne {
+    Annotation{sensor(name)} to Sensor{annotation}
+}
+
+relationship ManyToOne {
+    Sensor{user(login)} to User,
+}

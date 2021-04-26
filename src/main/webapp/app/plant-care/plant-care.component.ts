@@ -8,17 +8,9 @@ import { Router } from '@angular/router'; // det här lade jag till
 })
 
 //export class PlantCareComponent{}
-export class PlantCareComponent {
-  constructor() {
-    return new PlantCareComponent();
-  }
+export class PlantCareComponent /*implements OnInit*/ {
+  constructor(private router: Router) {}
+
+  /*ngOnInit(): void {
+  }*/
 }
-
-/*export class PlantCareComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}*/

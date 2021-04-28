@@ -9,3 +9,19 @@ Main page styles
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
 }
+
+#borderLogin {
+  border: 2px solid #006600;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40em;
+  text-align: center;
+  background-color: #d8e8d8;
+  padding: 20px;
+
+  //height: 100px;
+}
+
+// body {
+//   background: url(https://www.pexels.com/photo/aloe-vera-plant-on-white-pot-912410/);
+// }

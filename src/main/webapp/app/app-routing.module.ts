@@ -33,6 +33,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           path: 'plantcare',
           loadChildren: () => import('./plant-care/plant-care.module').then(m => m.PlantCareModule),
         },
+
         ...LAYOUT_ROUTES,
       ],
       { enableTracing: DEBUG_INFO_ENABLED }

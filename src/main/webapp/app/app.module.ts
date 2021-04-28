@@ -36,6 +36,7 @@ import { PlantCareModule } from './plant-care/plant-care.module';
     SharedModule,
     HomeModule,
     PlantCareModule,
+
     // jhipster-needle-angular-add-module JHipster will add new module here
     EntityRoutingModule,
     AppRoutingModule,

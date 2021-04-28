@@ -1,8 +1,12 @@
 <div class="row">
-  <div class="col-md-12">
-    <h1 class="display-3">Welcome to Plantalyzer Web App!</h1>
+  <!--  <div class="form-group">-->
 
-    <p class="lead">Let's learn more about your plants</p>
+  <div class="col-md-12">
+    <!--   <video> <source src="production ID_4891982.mp4" type="production ID_4891982.mp4" ></video>-->
+
+    <h1 style="color: #006600; text-align: center; margin: 10px" :class="display-3">Welcome to Plantalyzer!</h1>
+
+    <p style="color: #164516; text-align: center; margin: 40px" :class="lead">Let's learn more about your plants</p>
 
     <div [ngSwitch]="isAuthenticated()">
       <div class="alert alert-success" *ngSwitchCase="true">
@@ -11,18 +15,24 @@
         >
       </div>
 
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
-        <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</a
-        ><span jhiTranslate="global.messages.info.authenticated.suffix"
-          >, you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
-          password="user").</span
-        >
-      </div>
+      <div id="borderLogin">
+        <div *ngSwitchCase="false">
+          <a style="color: #003300" :class="alert-link" (click)="login()"> LOG IN</a>
+          <p style="color: #164516; text-align: left; margin: 40px; font-size: 18px">For testing purpose, try the default accounts:</p>
+          <p style="color: #164516; text-align: left; margin: 40px">
+            - Administrator (login="admin" and password="admin")
+            <br />
+            - User (login="user" and password="user").
+          </p>
+        </div>
 
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
-        <a class="alert-link" routerLink="account/register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
+        <div *ngSwitchCase="false">
+          <span>You don't have an account yet?</span>
+          <a style="color: #003300; text-align: left" :class="alert-link" routerLink="account/register">Register a new account</a>
+        </div>
+        <p style="color: #164516; text-align: left; margin: 40px">
+          “The Plantalyzer” is a IOT based application, which stores and presents data from a plant's environment
+        </p>
       </div>
     </div>
   </div>

@@ -42,7 +42,7 @@
     "jwtSecretKey": "YWFiNDhlNTkyZWEzMGE0NjE5ZTljZTc2ZjE0YjQyYjI4MjU1NWFjODZiYzFkYTQ0MGQyNWE3YTQ2Mjg0ODI5NmUzYTI2OGExM2QxY2M2OTQ2ZTExNzczZWYxNDNkMjBiNzA2ZTMyNWZiODNiZjgzNTA2NjRiYTIzZmY4ZTgyOTQ=",
     "clientPackageManager": "npm",
     "languages": ["en"],
-    "entities": ["Sensor", "Annotation"],
-    "lastLiquibaseTimestamp": 1618321852000
+    "entities": ["Sensor", "Annotation", "Info"],
+    "lastLiquibaseTimestamp": 1619524802000
   }
 }

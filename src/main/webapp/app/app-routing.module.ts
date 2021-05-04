@@ -35,6 +35,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./info-page/info-page.module').then(m => m.InfoPageModule),
         },
         {
+          path: 'plantcare',
+          loadChildren: () => import('./plant-care/plant-care.module').then(m => m.PlantCareModule),
+        },
+        {
           path: 'faq',
           loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule),
         },

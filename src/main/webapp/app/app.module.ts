@@ -29,6 +29,7 @@ import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import { InfoPageModule } from 'app/info-page/info-page.module';
+import { FaqModule } from 'app/faq/faq.module';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { InfoPageModule } from 'app/info-page/info-page.module';
     SharedModule,
     HomeModule,
     InfoPageModule,
+    FaqModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     EntityRoutingModule,
     AppRoutingModule,

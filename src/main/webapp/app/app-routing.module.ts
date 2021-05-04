@@ -34,6 +34,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           path: 'info-page',
           loadChildren: () => import('./info-page/info-page.module').then(m => m.InfoPageModule),
         },
+        {
+          path: 'faq',
+          loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule),
+        },
 
         ...LAYOUT_ROUTES,
       ],

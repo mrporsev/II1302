@@ -4,20 +4,20 @@
   <div class="col-md-12">
     <!--   <video> <source src="production ID_4891982.mp4" type="production ID_4891982.mp4" ></video>-->
 
-    <h1 style="color: #006600; text-align: center; margin: 10px" :class="display-3">Welcome to Plantalyzer!</h1>
+    <h1 :class="display-3" style="color: #006600; text-align: center; margin: 10px">Welcome to Plantalyzer!</h1>
 
-    <p style="color: #164516; text-align: center; margin: 40px" :class="lead">Let's learn more about your plants</p>
+    <p :class="lead" style="color: #164516; text-align: center; margin: 40px">Let's learn more about your plants</p>
 
     <div [ngSwitch]="isAuthenticated()">
-      <div class="alert alert-success" *ngSwitchCase="true">
-        <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
+      <div *ngSwitchCase="true" class="alert alert-success">
+        <span *ngIf="account" [translateValues]="{ username: account.login }" id="home-logged-message" jhiTranslate="home.logged.message"
           >Welcome, user "{{ account.login }}".</span
         >
       </div>
 
       <div id="borderLogin">
         <div *ngSwitchCase="false">
-          <a style="color: #003300" :class="alert-link" (click)="login()"> LOG IN</a>
+          <a (click)="login()" :class="alert-link" style="color: #003300"> LOG IN</a>
           <p style="color: #164516; text-align: left; margin: 40px; font-size: 18px">For testing purpose, try the default accounts:</p>
           <p style="color: #164516; text-align: left; margin: 40px">
             - Administrator (login="admin" and password="admin")
@@ -28,7 +28,7 @@
 
         <div *ngSwitchCase="false">
           <span>You don't have an account yet?</span>
-          <a style="color: #003300; text-align: left" :class="alert-link" routerLink="account/register">Register a new account</a>
+          <a :class="alert-link" routerLink="account/register" style="color: #003300; text-align: left">Register a new account</a>
         </div>
         <p style="color: #164516; text-align: left; margin: 40px">
           “The Plantalyzer” is a IOT based application, which stores and presents data from a plant's environment

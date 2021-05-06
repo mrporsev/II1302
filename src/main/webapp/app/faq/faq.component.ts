@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class FAQComponent {
   constructor(private router: Router) {}
-
+  //
   // myFunc()  {
   //   var ans = ((document.getElementById("answer") as HTMLInputElement).value);
   //   console.log(ans);

@@ -35,14 +35,18 @@ body {
   color: #003300;
 }
 .text {
+  background-image: url('../../content/images/pots-716579_1920.svg');
   color: black;
   font-size: x-large;
   background-color: whitesmoke;
   position: center;
   margin: auto;
+  background-blend-mode: soft-light;
 }
 .steps {
+  background-image: url('../../content/images/pots-716579_1920.svg');
   background-color: whitesmoke;
+  background-blend-mode: soft-light;
 }
 
 .box.arrow-right:after {

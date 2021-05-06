@@ -30,7 +30,6 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
         },
 
-
         {
           path: 'info-page',
           loadChildren: () => import('./info-page/info-page.module').then(m => m.InfoPageModule),
@@ -38,7 +37,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
         {
           path: 'plantcare',
           loadChildren: () => import('./plant-care/plant-care.module').then(m => m.PlantCareModule),
-
+        },
+        {
+          path: 'faq',
+          loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule),
         },
 
         ...LAYOUT_ROUTES,

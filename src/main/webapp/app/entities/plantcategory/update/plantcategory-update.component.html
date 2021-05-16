@@ -1,0 +1,161 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-plantcategory-heading"
+        data-cy="PlantcategoryCreateUpdateHeading"
+        jhiTranslate="plantalyzerApp.plantcategory.home.createOrEditLabel"
+      >
+        Create or edit a Plantcategory
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.description" for="field_description"
+            >Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.example" for="field_example">Example</label>
+          <input type="text" class="form-control" name="example" id="field_example" data-cy="example" formControlName="example" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.moisture_max" for="field_moisture_max"
+            >Moisture Max</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="moisture_max"
+            id="field_moisture_max"
+            data-cy="moisture_max"
+            formControlName="moisture_max"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.moisture_min" for="field_moisture_min"
+            >Moisture Min</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="moisture_min"
+            id="field_moisture_min"
+            data-cy="moisture_min"
+            formControlName="moisture_min"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.light_max" for="field_light_max">Light Max</label>
+          <input type="number" class="form-control" name="light_max" id="field_light_max" data-cy="light_max" formControlName="light_max" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.light_min" for="field_light_min">Light Min</label>
+          <input type="number" class="form-control" name="light_min" id="field_light_min" data-cy="light_min" formControlName="light_min" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.humidity_max" for="field_humidity_max"
+            >Humidity Max</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="humidity_max"
+            id="field_humidity_max"
+            data-cy="humidity_max"
+            formControlName="humidity_max"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.humidity_min" for="field_humidity_min"
+            >Humidity Min</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="humidity_min"
+            id="field_humidity_min"
+            data-cy="humidity_min"
+            formControlName="humidity_min"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.temperature_max" for="field_temperature_max"
+            >Temperature Max</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="temperature_max"
+            id="field_temperature_max"
+            data-cy="temperature_max"
+            formControlName="temperature_max"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="plantalyzerApp.plantcategory.temperature_min" for="field_temperature_min"
+            >Temperature Min</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="temperature_min"
+            id="field_temperature_min"
+            data-cy="temperature_min"
+            formControlName="temperature_min"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "plantalyzerApp": {
+    "plantcategory": {
+      "home": {
+        "title": "Plantcategories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Plantcategory",
+        "createOrEditLabel": "Create or edit a Plantcategory",
+        "notFound": "No Plantcategories found"
+      },
+      "created": "A new Plantcategory is created with identifier {{ param }}",
+      "updated": "A Plantcategory is updated with identifier {{ param }}",
+      "deleted": "A Plantcategory is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Plantcategory {{ id }}?"
+      },
+      "detail": {
+        "title": "Plantcategory"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "example": "Example",
+      "moisture_max": "Moisture Max",
+      "moisture_min": "Moisture Min",
+      "light_max": "Light Max",
+      "light_min": "Light Min",
+      "humidity_max": "Humidity Max",
+      "humidity_min": "Humidity Min",
+      "temperature_max": "Temperature Max",
+      "temperature_min": "Temperature Min"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 export interface IPlantcategory {
   id?: number;
   name?: string;
-  description?: string | null;
+  description?: string;
   example?: string | null;
   moisture_max?: number | null;
   moisture_min?: number | null;
@@ -17,7 +17,7 @@ export class Plantcategory implements IPlantcategory {
   constructor(
     public id?: number,
     public name?: string,
-    public description?: string | null,
+    public description?: string,
     public example?: string | null,
     public moisture_max?: number | null,
     public moisture_min?: number | null,

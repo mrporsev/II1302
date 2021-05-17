@@ -38,7 +38,7 @@ export class PlantcategoryComponent implements OnInit {
     return item.id!;
   }
 
-  delete(plantcategory: IPlantcategory): void {
+  /*delete(plantcategory: IPlantcategory): void {
     const modalRef = this.modalService.open(PlantcategoryDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
     modalRef.componentInstance.plantcategory = plantcategory;
     // unsubscribe not needed because closed completes on modal close
@@ -47,5 +47,5 @@ export class PlantcategoryComponent implements OnInit {
         this.loadAll();
       }
     });
-  }
+  }*/
 }

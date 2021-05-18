@@ -1,39 +1,59 @@
-<div class="row">
-  <!--  <div class="form-group">-->
+<div class="bg">
+  <div class="row">
+    <!--  <div class="form-group">-->
 
-  <div class="col-md-12">
-    <!--   <video> <source src="production ID_4891982.mp4" type="production ID_4891982.mp4" ></video>-->
+    <div class="col-md-12">
+      <!--   <video> <source src="production ID_4891982.mp4" type="production ID_4891982.mp4" ></video>-->
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <h1 :class="display-3" style="color: #006600; text-align: center; margin: 10px">Welcome to Plantalyzer!</h1>
 
-    <h1 :class="display-3" style="color: #006600; text-align: center; margin: 10px">Welcome to Plantalyzer!</h1>
+      <p :class="lead" style="color: #164516; text-align: center; margin: 40px">Let's learn more about your plants</p>
 
-    <p :class="lead" style="color: #164516; text-align: center; margin: 40px">Let's learn more about your plants</p>
+      <div [ngSwitch]="isAuthenticated()">
+        <div *ngSwitchCase="true" class="alert alert-success">
+          <span *ngIf="account" [translateValues]="{ username: account.login }" id="home-logged-message" jhiTranslate="home.logged.message"
+            >Welcome, user "{{ account.login }}".</span
+          >
+        </div>
 
-    <div [ngSwitch]="isAuthenticated()">
-      <div *ngSwitchCase="true" class="alert alert-success">
-        <span *ngIf="account" [translateValues]="{ username: account.login }" id="home-logged-message" jhiTranslate="home.logged.message"
-          >Welcome, user "{{ account.login }}".</span
-        >
-      </div>
-
-      <div id="borderLogin">
-        <div *ngSwitchCase="false">
+        <div id="borderLogin">
           <a (click)="login()" :class="alert-link" style="color: #003300"> LOG IN</a>
-          <p style="color: #164516; text-align: left; margin: 40px; font-size: 18px">For testing purpose, try the default accounts:</p>
-          <p style="color: #164516; text-align: left; margin: 40px">
-            - Administrator (login="admin" and password="admin")
-            <br />
-            - User (login="user" and password="user").
+
+          <div *ngSwitchCase="false">
+            <span>You don't have an account yet?</span>
+            <a :class="alert-link" routerLink="account/register" style="color: #003300; text-align: left">Register a new account</a>
+          </div>
+          <p style="color: black; text-align: left; margin: 40px">
+            “The Plantalyzer” is a IOT based application, which stores and presents data from a plant's environment
           </p>
         </div>
-
-        <div *ngSwitchCase="false">
-          <span>You don't have an account yet?</span>
-          <a :class="alert-link" routerLink="account/register" style="color: #003300; text-align: left">Register a new account</a>
-        </div>
-        <p style="color: #164516; text-align: left; margin: 40px">
-          “The Plantalyzer” is a IOT based application, which stores and presents data from a plant's environment
-        </p>
       </div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
     </div>
   </div>
 </div>

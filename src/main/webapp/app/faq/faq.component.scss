@@ -1,13 +1,11 @@
 body {
-  background-image: url('../../content/images/pots-716579_1920.svg');
+  background-image: url('../../content/images/imgeBac2.svg');
   background-repeat: no-repeat;
   background-color: #d8e8d8;
-  background-blend-mode: soft-light;
 }
 #bg {
-  background-image: url('../../content/images/pots-716579_1920.svg');
+  background-image: url('../../content/images/imgeBac2.svg');
   height: 50%;
-  background-blend-mode: soft-light;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,4 +14,23 @@ body {
 .question {
   font-size: large;
   font-style: oblique;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+.steps {
+  //background-image: url('../../content/images/pots-716579_1920.svg');
+  //background-color: whitesmoke;
+  background-blend-mode: soft-light;
+  font-size: large;
+  font-style: oblique;
+  font-palette: dark;
+}
+
+.sections {
+  font-style: inherit;
+  font-size: large;
+  color: brown;
 }

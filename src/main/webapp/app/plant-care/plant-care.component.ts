@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Plantcategory } from 'app/entities/plantcategory/plantcategory.model';
 import {
@@ -8,9 +8,6 @@ import {
   PlantcategoryService,
 } from 'app/entities/plantcategory/service/plantcategory.service';
 import { Observable } from 'rxjs/internal/Observable';
-import { PlantcategoryModule } from 'src/main/webapp/app/entities/plantcategory/plantcategory.module';
-import { IPlantcategory } from 'src/main/webapp/app/entities/plantcategory/plantcategory.model';
-import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'jhi-plant-care',
@@ -22,7 +19,7 @@ export class PlantCareComponent implements OnInit {
   secondmsg: string | undefined;
   responseDB: Observable<EntityResponseType> | undefined;
   //testCategory: Observable<EntityArrayResponseType> | undefined;
-  testCategory: Observable<EntityArrayResponseType> | undefined;
+  testCategories: Observable<EntityArrayResponseType> | undefined;
 
   initMsg: string | undefined;
 
@@ -32,7 +29,8 @@ export class PlantCareComponent implements OnInit {
 
   // Initiate component by finding plantcategories from database.
   ngOnInit(): void {
-    this.testCategory = this.categoryService.query('select *');
+    this.testCategories = this.categoryService.query();
+    console.log(this.testCategories);
     this.initMsg = 'onInit har körts!';
   }
 
@@ -47,8 +45,8 @@ export class PlantCareComponent implements OnInit {
 
   // parse into PlantCategory class from PlantCategoryModel?
   clickEventFetchFromDB(): Observable<EntityResponseType> {
-    const response = this.categoryService.findByName('Tropical');
-
+    const response = this.categoryService.find(1);
+    console.log(response);
     this.responseDB = response;
     return this.responseDB;
   }

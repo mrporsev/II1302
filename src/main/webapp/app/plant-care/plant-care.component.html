@@ -30,6 +30,9 @@
       </div>
 
       <div>{{ initMsg }}</div>
+      <ul>
+        <li *ngFor="let category of testCategories; let i = index">{{ i }} {{ category.name }}</li>
+      </ul>
 
       <!-- TODO: make the following text collapsible, or into an accordion set -->
 

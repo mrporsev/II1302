@@ -1,6 +1,6 @@
 <div>
-  <h2 id="page-heading" data-cy="AnnotationHeading">
-    <span jhiTranslate="plantalyzerApp.annotation.home.title">Annotations</span>
+  <h2 :class="display-3" style="color: #006600; text-align: center; margin: 10px">
+    <span>Annotations</span>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">

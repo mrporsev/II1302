@@ -4,10 +4,15 @@ Main page styles
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (-moz-min-device-pixel-ratio: 2),
+  //only screen and (-moz-min-device-pixel-ratio: 2),
   only screen and (-o-min-device-pixel-ratio: 2/1),
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
+}
+.bg {
+  background-image: url('../../content/images/flower-2592766_1920.svg');
+  background-position: center;
+  //background-blend-mode: unset;
 }
 
 #borderLogin {
@@ -16,7 +21,10 @@ Main page styles
   margin-right: auto;
   width: 40em;
   text-align: center;
-  background-color: #d8e8d8;
+  //background-color: #d8e8d8;
+  font-style: inherit;
+  font-size: large;
+  color: brown;
   padding: 20px;
 
   //height: 100px;

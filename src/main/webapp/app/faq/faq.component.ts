@@ -14,4 +14,7 @@ export class FAQComponent {
   //   console.log(ans);
   //
   // }
+  toPlantCare(): void {
+    this.router.navigate(['/plantcare']);
+  }
 }

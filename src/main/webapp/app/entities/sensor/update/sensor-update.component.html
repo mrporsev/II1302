@@ -15,7 +15,7 @@
 
         <div class="form-group">
           <label class="form-control-label" jhiTranslate="plantalyzerApp.sensor.humidity" for="field_humidity">Humidity</label>
-          <input type="text" class="form-control" name="humidity" id="field_humidity" data-cy="humidity" formControlName="humidity" />
+          <input type="text" class="form-control" name="humidity" id="field_humidity" data-cy="humidity" formControlName="humidity" [readonly]="true" />
         </div>
 
         <div class="form-group">
@@ -27,16 +27,17 @@
             id="field_soilMoisture"
             data-cy="soilMoisture"
             formControlName="soilMoisture"
+            [readonly]="true"
           />
         </div>
 
         <div class="form-group">
           <label class="form-control-label" jhiTranslate="plantalyzerApp.sensor.light" for="field_light">Light</label>
-          <input type="text" class="form-control" name="light" id="field_light" data-cy="light" formControlName="light" />
+          <input type="text" class="form-control" name="light" id="field_light" data-cy="light" formControlName="light" [readonly]="true" />
         </div>
 
         <div class="form-group">
-          <label class="form-control-label" jhiTranslate="plantalyzerApp.sensor.name" for="field_name">Name</label>
+          <label class="form-control-label" for="field_name">Name (sensor ID)</label>
           <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
         </div>
 

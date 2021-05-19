@@ -9,6 +9,8 @@ import { ISensor, Sensor } from '../sensor.model';
 import { SensorService } from '../service/sensor.service';
 import { IUser } from 'app/entities/user/user.model';
 import { UserService } from 'app/entities/user/user.service';
+import jsonTest from "app/entities/sensor/_files/jsonTest.json";
+import {parseArguments} from "@angular/cli/models/parser";
 
 @Component({
   selector: 'jhi-sensor-update',
@@ -16,7 +18,7 @@ import { UserService } from 'app/entities/user/user.service';
 })
 export class SensorUpdateComponent implements OnInit {
   isSaving = false;
-
+  jsonTestData:{UVScale:string, Temperature:string, SoilMoisture:string, Humidity:string}[] = jsonTest;
   usersSharedCollection: IUser[] = [];
 
   editForm = this.fb.group({
@@ -101,13 +103,18 @@ export class SensorUpdateComponent implements OnInit {
       .subscribe((users: IUser[]) => (this.usersSharedCollection = users));
   }
 
+  protected randomIntFromInterval(min: number, max: number):number { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
   protected createFromForm(): ISensor {
     return {
       ...new Sensor(),
       id: this.editForm.get(['id'])!.value,
-      humidity: this.editForm.get(['humidity'])!.value,
-      soilMoisture: this.editForm.get(['soilMoisture'])!.value,
-      light: this.editForm.get(['light'])!.value,
+      //humidity: this.editForm.get(['humidity'])!.value,
+      humidity: (Number(this.jsonTestData[3].Humidity) + this.randomIntFromInterval(1,100)).toString(),
+      soilMoisture: (Number(this.jsonTestData[2].SoilMoisture) + this.randomIntFromInterval(1,10)).toString(),
+      light: (Number(this.jsonTestData[0].UVScale) + this.randomIntFromInterval(1,16)).toString(),
       name: this.editForm.get(['name'])!.value,
       user: this.editForm.get(['user'])!.value,
     };

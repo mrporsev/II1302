@@ -18,24 +18,24 @@ export class PlantCareComponent implements OnInit {
   msg: string | undefined;
   secondmsg: string | undefined;
   responseDB: Observable<EntityResponseType> | undefined;
-  //testCategory: Observable<EntityArrayResponseType> | undefined;
-  testCategories: Observable<EntityArrayResponseType> | undefined;
+  // testCategories: Observable<EntityArrayResponseType> | undefined;
+  testCategories: Array<Plantcategory> | undefined;
 
   initMsg: string | undefined;
 
   categories: Plantcategory[] | undefined;
 
-  constructor(private router: Router, private categoryService: PlantcategoryService) {}
+  constructor(private categoryService: PlantcategoryService) {}
 
   // Initiate component by finding plantcategories from database.
   ngOnInit(): void {
-    this.testCategories = this.categoryService.query();
+    this.testCategories = this.categoryService.getAllHardcoded();
     console.log(this.testCategories);
     this.initMsg = 'onInit har körts!';
   }
 
   clickEventTest(): string {
-    this.msg = 'Information about this plant category should appear here (fetch from database)';
+    this.msg = 'hämtar info från plant-care';
     return this.msg;
   }
   clickEventTestCategory(): string {

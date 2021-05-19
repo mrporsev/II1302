@@ -10,10 +10,11 @@ import { Observable } from 'rxjs';
 import { isPresent } from 'app/core/util/operators';
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
 import { createRequestOption } from 'app/core/request/request-util';
-import { IPlantcategory, getPlantcategoryIdentifier } from '../plantcategory.model';
+import { IPlantcategory, Plantcategory, getPlantcategoryIdentifier } from '../plantcategory.model';
 
 export type EntityResponseType = HttpResponse<IPlantcategory>;
 export type EntityArrayResponseType = HttpResponse<IPlantcategory[]>;
+export type PlantcategoryArray = Array<Plantcategory>;
 
 @Injectable({ providedIn: 'root' })
 export class PlantcategoryService {
@@ -84,5 +85,65 @@ export class PlantcategoryService {
       return [...plantcategoriesToAdd, ...plantcategoryCollection];
     }
     return plantcategoryCollection;
+  }
+
+  getAllHardcoded(): PlantcategoryArray {
+    const arrayResponse = Array<Plantcategory>();
+
+    // hardcoded values for one Plantcategory
+    arrayResponse.push(
+      new Plantcategory(
+        1,
+        'Succulents and Cacti',
+        'Wild succulents and cacti usually grow in drier climates. They’ve successfully adapted by having thicker stems and leaves that can store water. As such they can usually handle drought pretty well and domestic plants will usually prefer the soil drying out somewhat between waterings. \nPlants in this category can be recognized by their leaves: they can be smooth, waxy, silky or thorny but all of them are thicker than the type of leaves that grow on trees. If you pinch hard enough on a succulent leaf, it should be able to compress between your fingers (avoid doing this though as this can harm the leaf). \nCacti can be easy to recognize if they have the characteristic spiky thorns, but some cacti have very small thorns or none at all. As previously mentioned succulents and cacti usually grow in drier climates. They will generally prefer lots of light and a sandy soil that will easily drain excess water.',
+        'Crassula (Crassula), \nAloe Vera (Aloe vera), \nMother in Law’s Tongue (Sansevieria trifasciata), \nKalanchoe (Kalanchoe)',
+        5,
+        2,
+        10,
+        6,
+        25,
+        15,
+        30,
+        10
+      )
+    );
+    // hardcoded values for one Plantcategory
+    arrayResponse.push(
+      new Plantcategory(
+        2,
+        'Common houseplants',
+        'This is the category for many of the common house plants. Plants in this category have green leaves, they may or may not have flowers, and they are potted in standard potting soil. Potted plants found in offices and indoor work spaces usually belong to this category. \nIn normal conditions these plants require water about once a week, with a possible higher need during spring and when they’re exposed to a lot of light and warmth. They might also require some extra air humidity which can be provided by light misting.',
+        'Crassula (Crassula), \nAloe Vera (Aloe vera), \nMother in Law’s Tongue (Sansevieria trifasciata), \nKalanchoe (Kalanchoe)',
+        7,
+        4,
+        8,
+        5,
+        40,
+        20,
+        30,
+        12
+      )
+    );
+    // hardcoded values for one Plantcategory
+    arrayResponse.push(
+      new Plantcategory(
+        3,
+        'Tropical',
+        'Tropical plants can vary from small and exotic like the Christmas Cactus to big and lush like the Monstera. \nYour plant may fit into this category if it has very big and wide leaves, if it’s a type of fern, or if it looks similar to any of the given examples. \nThe plants in this category generally like lots of water, and may not like to dry out that much in between waterings. They also thrive in humidity a bit higher than normal living conditions: consider misting your plant fairly often or even place a humidifier close to your plant.',
+        'Monstera (Monstera deliciosa), \nCalathea (Calathea), \nFlamingo flower (Anthurium scherzerianum), \nBird of Paradise (Strelitzia reginae), \nChristmas cactus (Schlumbergera bridgesii), \nBoston fern (Nephrolepis exaltata)',
+        8,
+        5,
+        8,
+        4,
+        70,
+        30,
+        30,
+        15
+      )
+    );
+    // hardcoded values for one Plantcategory
+    arrayResponse.push(new Plantcategory(4, 'Unspecified'));
+
+    return arrayResponse;
   }
 }

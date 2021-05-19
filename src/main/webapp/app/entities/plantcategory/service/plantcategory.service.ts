@@ -38,7 +38,8 @@ export class PlantcategoryService {
   }
 
   find(id: number): Observable<EntityResponseType> {
-    return this.http.get<IPlantcategory>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+    const resp = this.http.get<IPlantcategory>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+    return resp;
   }
 
   /**
@@ -48,6 +49,10 @@ export class PlantcategoryService {
    */
   findByName(name: string): Observable<EntityResponseType> {
     return this.http.get<IPlantcategory>(`${this.resourceUrl}/${name}`, { observe: 'response' });
+  }
+
+  findTest(): string {
+    return 'hämtat från plantcareservice';
   }
 
   query(req?: any): Observable<EntityArrayResponseType> {

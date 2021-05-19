@@ -19,6 +19,19 @@
         <h4 ng-init="">{{ msg }}</h4>
       </div>
 
+      <div>
+        <button (click)="clickEventTestCategory()">Test reachibility plantcategory component</button>
+        <h4 ng-init="">{{ secondmsg }}</h4>
+      </div>
+
+      <div>
+        <button (click)="clickEventFetchFromDB()">test reachibility DB</button>
+        <h4>{{ responseDB }}</h4>
+      </div>
+
+      <div>{{ initMsg }}</div>
+      <div *ngFor="let categories; for: testCategories">en kategori</div>
+
       <!-- TODO: make the following text collapsible, or into an accordion set -->
 
       <div>

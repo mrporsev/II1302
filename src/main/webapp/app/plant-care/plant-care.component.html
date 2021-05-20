@@ -1,10 +1,12 @@
 <!--Using Bootstrap for styling-->
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>Plant care</h1>
+      <h1 :class="display-3" style="color: #006600; text-align: center; margin: 10px">Plant care</h1>
       <p>
-        The Plantalyzer sensor will track soil moisture, light, air humidity and temperature. Put the sensor in the plant pot and the sensor will observe the environment of the and send the information to your account.
+        The Plantalyzer sensor will track soil moisture, light, air humidity and temperature. Put the sensor in the plant pot and the sensor
+        will observe the environment of the and send the information to your account.
       </p>
       <p>This page will help you better understand the data so that you can make better use of it.</p>
       <p>
@@ -40,8 +42,6 @@
           </table>
         </div>
       </ng-container>
-
-      <!-- TODO: make the following text collapsible, or into an accordion set -->
 
       <div>
         <div class="value-title">Soil moisture</div>

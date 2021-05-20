@@ -31,47 +31,47 @@
   <div class="table-responsive" id="entities" *ngIf="sensors && sensors.length > 0">
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
-        <tr>
-          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
-          <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.humidity">Humidity</span></th>
-          <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.soilMoisture">Soil Moisture</span></th>
-          <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.light">Light</span></th>
-          <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.name">Name</span></th>
-          <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.user">User</span></th>
-          <th scope="col"></th>
-        </tr>
+      <tr>
+        <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+        <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.humidity">Humidity</span></th>
+        <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.soilMoisture">Soil Moisture</span></th>
+        <th scope="col"><span>UV-Scale</span></th>
+        <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.name">Name</span></th>
+        <th scope="col"><span jhiTranslate="plantalyzerApp.sensor.user">User</span></th>
+        <th scope="col"></th>
+      </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let sensor of sensors; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/sensor', sensor.id, 'view']">{{ sensor.id }}</a>
-          </td>
-          <td>{{ sensor.humidity }}</td>
-          <td>{{ sensor.soilMoisture }}</td>
-          <td>{{ sensor.light }}</td>
-          <td>{{ sensor.name }}</td>
-          <td>
-            {{ sensor.user?.login }}
-          </td>
-          <td class="text-right">
-            <div class="btn-group">
-              <button type="submit" [routerLink]="['/sensor', sensor.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
-                <fa-icon icon="eye"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-              </button>
+      <tr *ngFor="let sensor of sensors; trackBy: trackId" data-cy="entityTable">
+        <td>
+          <a [routerLink]="['/sensor', sensor.id, 'view']">{{ sensor.id }}</a>
+        </td>
+        <td>{{ sensor.humidity }}</td>
+        <td>{{ sensor.soilMoisture }}</td>
+        <td>{{ sensor.light }}</td>
+        <td>{{ sensor.name }}</td>
+        <td>
+          {{ sensor.user?.login }}
+        </td>
+        <td class="text-right">
+          <div class="btn-group">
+            <button type="submit" [routerLink]="['/sensor', sensor.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+              <fa-icon icon="eye"></fa-icon>
+              <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+            </button>
 
-              <button type="submit" [routerLink]="['/sensor', sensor.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
-                <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-              </button>
+            <button type="submit" [routerLink]="['/sensor', sensor.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+              <fa-icon icon="pencil-alt"></fa-icon>
+              <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+            </button>
 
-              <button type="submit" (click)="delete(sensor)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
-                <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-              </button>
-            </div>
-          </td>
-        </tr>
+            <button type="submit" (click)="delete(sensor)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+              <fa-icon icon="times"></fa-icon>
+              <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+            </button>
+          </div>
+        </td>
+      </tr>
       </tbody>
     </table>
   </div>

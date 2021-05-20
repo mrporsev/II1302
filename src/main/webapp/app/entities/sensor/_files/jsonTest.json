@@ -1,6 +1,6 @@
 [
-  {"UVScale" :  2},
-  {"Temperature": 72},
-  {"SoilMoisture": 3},
-  {"Humidity": 44}
+  {"UVScale" :  1},
+  {"Temperature": 1},
+  {"SoilMoisture": 1},
+  {"Humidity": 1}
 ]

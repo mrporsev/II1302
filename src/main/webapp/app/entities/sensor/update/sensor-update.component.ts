@@ -40,7 +40,6 @@ export class SensorUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ sensor }) => {
       this.updateForm(sensor);
-
       this.loadRelationshipsOptions();
     });
   }

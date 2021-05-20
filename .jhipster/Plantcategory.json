@@ -1,0 +1,55 @@
+{
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "example",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "moisture_max",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "moisture_min",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "light_max",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "light_min",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "humidity_max",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "humidity_min",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "temperature_max",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "temperature_min",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [],
+  "service": "no",
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Plantcategory",
+  "changelogDate": "20210516203517"
+}

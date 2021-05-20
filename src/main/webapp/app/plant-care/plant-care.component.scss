@@ -1,7 +1,57 @@
+
+td,
+th {
+  padding: 1px;
+  margin: 1px;
+  border: none;
+  border-bottom: none;
+}
+.category-table,
+thead,
+th {
+  border-bottom: none;
+  border-collapse: collapse;
+}
+
+.category-table {
+  width: 50%;
+  padding-bottom: 1px;
+  margin: 0px;
+  margin-bottom: 5px;
+  //background-color: #d8e8d8;
+  text-align: center;
+}
+
+.category {
+  //background-color: #d8e8d8;
+  margin: 10px;
+  padding: 10px;
+}
+
+.category-title {
+  color: brown;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.value-title {
+  color: brown;
+  font-size: x-large;
+}
+
+.value-desc,
+.value-scale {
+  margin-bottom: 10px;
+}
+
+.value-list {
+  list-style-type: none;
+
 body {
   background-image: url('../../content/images/imgeBac2.svg');
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }

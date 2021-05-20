@@ -54,6 +54,8 @@ public class CacheConfiguration {
             createCache(cm, org.jhipster.plantalyzer.domain.Sensor.class.getName());
             createCache(cm, org.jhipster.plantalyzer.domain.Sensor.class.getName() + ".annotations");
             createCache(cm, org.jhipster.plantalyzer.domain.Annotation.class.getName());
+            createCache(cm, org.jhipster.plantalyzer.domain.Plantcategory.class.getName());
+            createCache(cm, org.jhipster.plantalyzer.domain.Info.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

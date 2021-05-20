@@ -1,12 +1,130 @@
 <!--Using Bootstrap for styling-->
-<body>
-  <div class="container">
-    <p>plant-care works!</p>
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>Success Message</h1>
-        <p class="text-succcess"><strong>Success!</strong> Able to create a component.</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Plant care</h1>
+      <p>
+        The Plantalyzer sensor will track soil moisture, light, air humidity and temperature. Put the sensor in the plant pot and the sensor will observe the environment of the and send the information to your account.
+      </p>
+      <p>This page will help you better understand the data so that you can make better use of it.</p>
+      <p>
+        While you may choose to observe which data values correspond to a healthy and happy plant by yourself, you can also use the plant
+        category guide to see what data values are suitable for some common categories of house plants.
+      </p>
+
+      <ng-container *ngFor="let category of testCategories">
+        <div class="category">
+          <div class="category-title">{{ category.name }}</div>
+          <p class="category-desc">{{ category.description }}</p>
+          <p class="category-examples">
+            Examples of plants in this category: <i> {{ category.example }} </i>
+          </p>
+
+          <table class="category-table">
+            <thead>
+              <tr>
+                <th>Moisture</th>
+                <th>Light</th>
+                <th>Humidity</th>
+                <th>Temperature</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ category.moisture_min }} - {{ category.moisture_max }}</td>
+                <td>{{ category.light_min }} - {{ category.light_max }}</td>
+                <td>{{ category.humidity_min }}% - {{ category.humidity_max }}%</td>
+                <td>{{ category.temperature_min }}° - {{ category.temperature_max }}° Celsius</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-container>
+
+      <!-- TODO: make the following text collapsible, or into an accordion set -->
+
+      <div>
+        <div class="value-title">Soil moisture</div>
+        <div class="value-desc">
+          Like all living things, plants depend upon water for their survival. Going without enough water for too long will dry out the
+          plant and kill it quickly. But too much of it will cause the root system to rot over time. Ensure that the pot can drain out
+          excess water so that the soil won’t become soggy and water-logged.
+        </div>
+        <div class="value-scale">Soil moisture is measured on a scale of 1 to 10, where 1 is the driest and 10 the wettest.</div>
+
+        <ul class="value-list">
+          <li><b>Too little: </b> the plant will look wilted, with droopy leaves. The plant may drop leaves that feel dry or papery.</li>
+          <li>
+            <b>Too much: </b> the plant does not thrive and may drop leaves (or flowers) for seemingly no reason. Newly dropped leaves
+            should feel like they have a similar texture to the leaves still on the plant.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="value-title">UV Light</div>
+        <div class="value-desc">
+          A few plants like blistering sun, a few plants like the shadow, and most prefer something in between. Artificial grow lights can
+          be used to supplement natural sun if a plant has too little light, and a screen can be used to filter out some of the light if the
+          plant is getting scorched. The light can be especially harsh during the spring months or in windows facing south, so you may want
+          to be more observant in those situations.
+        </div>
+        <div class="value-scale">Light is measured on a scale of 1 to 10, with 1 being very dark and 10 being extremely bright</div>
+        <ul class="value-list">
+          <li>
+            <b>Too little: </b>the plant looks unhappy with no apparent other reason. The plant may grow to be more tall and spindly than
+            normal for its species, or grow crooked towards the best light source.
+          </li>
+          <li>
+            <b>Too much: </b>the leaves closest to the light source may have burn marks, causing an otherwise healthy leaf to have dry,
+            brown blotches.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="value-title">Air humidity</div>
+        <div class="value-desc">
+          The indoor climate of a home or an office usually has a fairly stable level of humidity and varies a lot less than it would
+          outdoors. Increasing the indoor humidity can be done by having a humidifier in the same room as the plant, or by misting the plant
+          with a spray bottle now and then. During the winter months, it’s usually less humid both indoors and outdoors than during the rest
+          of the year.
+        </div>
+        <div class="value-scale">
+          Air humidity is measured as a percentage of the maximum saturation, where 0% is completely dry air and 100% is fully saturated
+          air.
+        </div>
+        <ul class="value-list">
+          <li><b>Too little: </b>the tips of otherwise healthy leaves may get dry and brown.</li>
+          <li><b>Too much: </b>mold may form on top of the soil..</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="value-title">Temperature</div>
+        <div class="value-desc">
+          Normal indoor temperatures are satisfactory for most houseplants. If you have plants outdoors you may need to protect them from
+          sub-zero temperatures.
+        </div>
+        <div class="value-scale">Temperature is measured in Celsius.</div>
+        <ul class="value-list">
+          <li><b>Too little: </b>the plant stops growing and may drop leaves.</li>
+          <li><b>Too much: </b>the plant looks wilted and dries out quicker than usual.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="value-title">General tips</div>
+        <div class="value-desc">
+          The Plantalyzer sensor does not track nutrient levels or if a plant needs fertilizer. If you want to treat your houseplant to some
+          extra nutrients it’s usually most beneficial during the spring and the summer, when the plant is likely to grow. During the darker
+          and colder months, the plant will enter into a resting phase where less water and nutrients are needed.
+        </div>
+        <div class="value-desc">
+          Repotting a plant into a bigger pot can give it more room to expand, but it can also be stressful for a plant to have its root
+          system disturbed.
+        </div>
       </div>
     </div>
   </div>
-</body>
+</div>

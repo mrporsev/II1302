@@ -1,0 +1,98 @@
+<div>
+  <h2 id="page-heading" data-cy="PlantcategoryHeading">
+    <span jhiTranslate="plantalyzerApp.plantcategory.home.title">Plantcategories</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="plantalyzerApp.plantcategory.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-plantcategory"
+        [routerLink]="['/plantcategory/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="plantalyzerApp.plantcategory.home.createLabel"> Create a new Plantcategory </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="plantcategories?.length === 0">
+    <span jhiTranslate="plantalyzerApp.plantcategory.home.notFound">No plantcategories found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="plantcategories && plantcategories.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.name">Name</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.description">Description</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.example">Example</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.moisture_max">Moisture Max</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.moisture_min">Moisture Min</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.light_max">Light Max</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.light_min">Light Min</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.humidity_max">Humidity Max</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.humidity_min">Humidity Min</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.temperature_max">Temperature Max</span></th>
+          <th scope="col"><span jhiTranslate="plantalyzerApp.plantcategory.temperature_min">Temperature Min</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plantcategory of plantcategories; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/plantcategory', plantcategory.id, 'view']">{{ plantcategory.id }}</a>
+          </td>
+          <td>{{ plantcategory.name }}</td>
+          <td>{{ plantcategory.description }}</td>
+          <td>{{ plantcategory.example }}</td>
+          <td>{{ plantcategory.moisture_max }}</td>
+          <td>{{ plantcategory.moisture_min }}</td>
+          <td>{{ plantcategory.light_max }}</td>
+          <td>{{ plantcategory.light_min }}</td>
+          <td>{{ plantcategory.humidity_max }}</td>
+          <td>{{ plantcategory.humidity_min }}</td>
+          <td>{{ plantcategory.temperature_max }}</td>
+          <td>{{ plantcategory.temperature_min }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/plantcategory', plantcategory.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/plantcategory', plantcategory.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(plantcategory)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

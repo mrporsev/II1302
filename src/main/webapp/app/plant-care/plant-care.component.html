@@ -13,108 +13,119 @@
         category guide to see what data values are suitable for some common categories of house plants.
       </p>
 
-      <!-- for experimentation purposes-->
-      <div>
-        <button (click)="clickEventTest()">Plant category X</button>
-        <h4 ng-init="">{{ msg }}</h4>
-      </div>
+      <ng-container *ngFor="let category of testCategories">
+        <div class="category">
+          <div class="category-title">{{ category.name }}</div>
+          <p class="category-desc">{{ category.description }}</p>
+          <p class="category-examples">
+            Examples of plants in this category: <i> {{ category.example }} </i>
+          </p>
 
-      <div>
-        <button (click)="clickEventTestCategory()">Test reachibility plantcategory component</button>
-        <h4 ng-init="">{{ secondmsg }}</h4>
-      </div>
-
-      <div>
-        <button (click)="clickEventFetchFromDB()">test reachibility DB</button>
-        <h4>{{ responseDB }}</h4>
-      </div>
-
-      <div>{{ initMsg }}</div>
-      <ul>
-        <li *ngFor="let category of testCategories; let i = index">{{ i }} {{ category.name }}</li>
-      </ul>
+          <table class="category-table">
+            <thead>
+              <tr>
+                <th>Moisture</th>
+                <th>Light</th>
+                <th>Humidity</th>
+                <th>Temperature</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ category.moisture_min }} - {{ category.moisture_max }}</td>
+                <td>{{ category.light_min }} - {{ category.light_max }}</td>
+                <td>{{ category.humidity_min }}% - {{ category.humidity_max }}%</td>
+                <td>{{ category.temperature_min }}° - {{ category.temperature_max }}° Celsius</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-container>
 
       <!-- TODO: make the following text collapsible, or into an accordion set -->
 
       <div>
-        <h3>Soil moisture</h3>
-        <p>
+        <div class="value-title">Soil moisture</div>
+        <div class="value-desc">
           Like all living things, plants depend upon water for their survival. Going without enough water for too long will dry out the
           plant and kill it quickly. But too much of it will cause the root system to rot over time. Ensure that the pot can drain out
           excess water so that the soil won’t become soggy and water-logged.
-        </p>
-        <p>Soil moisture is measured on a scale of 1 to 10, where 1 is the driest and 10 the wettest.</p>
-        <p>Too little: the plant will look wilted, with droopy leaves. The plant may drop leaves that feel dry or papery.</p>
-        <p>
-          Too much: the plant does not thrive and may drop leaves (or flowers) for seemingly no reason. Newly dropped leaves should feel
-          like they have a similar texture to the leaves still on the plant.
-        </p>
+        </div>
+        <div class="value-scale">Soil moisture is measured on a scale of 1 to 10, where 1 is the driest and 10 the wettest.</div>
+
+        <ul class="value-list">
+          <li><b>Too little: </b> the plant will look wilted, with droopy leaves. The plant may drop leaves that feel dry or papery.</li>
+          <li>
+            <b>Too much: </b> the plant does not thrive and may drop leaves (or flowers) for seemingly no reason. Newly dropped leaves
+            should feel like they have a similar texture to the leaves still on the plant.
+          </li>
+        </ul>
       </div>
 
       <div>
-        <h3>Light</h3>
-        <p>
+        <div class="value-title">Light</div>
+        <div class="value-desc">
           A few plants like blistering sun, a few plants like the shadow, and most prefer something in between. Artificial grow lights can
           be used to supplement natural sun if a plant has too little light, and a screen can be used to filter out some of the light if the
           plant is getting scorched. The light can be especially harsh during the spring months or in windows facing south, so you may want
           to be more observant in those situations.
-        </p>
-        <p>Light is measured on a scale of ???</p>
-        <p>
-          Too little: the plant looks unhappy with no apparent other reason. The plant may grow to be more tall and spindly than normal for
-          its species, or grow crooked towards the best light source.
-        </p>
-        <p>
-          Too much: the leaves closest to the light source may have burn marks, causing an otherwise healthy leaf to have dry, brown
-          blotches.
-        </p>
+        </div>
+        <div class="value-scale">Light is measured on a scale of 1 to 10, with 1 being very dark and 10 being extremely bright</div>
+        <ul class="value-list">
+          <li>
+            <b>Too little: </b>the plant looks unhappy with no apparent other reason. The plant may grow to be more tall and spindly than
+            normal for its species, or grow crooked towards the best light source.
+          </li>
+          <li>
+            <b>Too much: </b>the leaves closest to the light source may have burn marks, causing an otherwise healthy leaf to have dry,
+            brown blotches.
+          </li>
+        </ul>
       </div>
 
       <div>
-        <h3>Air humidity</h3>
-        <p>
+        <div class="value-title">Air humidity</div>
+        <div class="value-desc">
           The indoor climate of a home or an office usually has a fairly stable level of humidity and varies a lot less than it would
           outdoors. Increasing the indoor humidity can be done by having a humidifier in the same room as the plant, or by misting the plant
           with a spray bottle now and then. During the winter months, it’s usually less humid both indoors and outdoors than during the rest
           of the year.
-        </p>
-        <p>
+        </div>
+        <div class="value-scale">
           Air humidity is measured as a percentage of the maximum saturation, where 0% is completely dry air and 100% is fully saturated
           air.
-        </p>
-        <p>Too little: the tips of otherwise healthy leaves may get dry and brown.</p>
-        <p>Too much: mold may form on top of the soil.</p>
+        </div>
+        <ul class="value-list">
+          <li><b>Too little: </b>the tips of otherwise healthy leaves may get dry and brown.</li>
+          <li><b>Too much: </b>mold may form on top of the soil..</li>
+        </ul>
       </div>
 
       <div>
-        <h3>Temperature</h3>
-        <p>
+        <div class="value-title">Temperature</div>
+        <div class="value-desc">
           Normal indoor temperatures are satisfactory for most houseplants. If you have plants outdoors you may need to protect them from
           sub-zero temperatures.
-        </p>
-        <p>Temperature is measured in Celsius.</p>
-        <p>Too little: the plant stops growing and may drop leaves.</p>
-        <p>Too much: the plant looks wilted and dries out quicker than usual.</p>
+        </div>
+        <div class="value-scale">Temperature is measured in Celsius.</div>
+        <ul class="value-list">
+          <li><b>Too little: </b>the plant stops growing and may drop leaves.</li>
+          <li><b>Too much: </b>the plant looks wilted and dries out quicker than usual.</li>
+        </ul>
       </div>
 
       <div>
-        <h3>General tips</h3>
-        <p>
+        <div class="value-title">General tips</div>
+        <div class="value-desc">
           The Plantalyzer sensor does not track nutrient levels or if a plant needs fertilizer. If you want to treat your houseplant to some
           extra nutrients it’s usually most beneficial during the spring and the summer, when the plant is likely to grow. During the darker
           and colder months, the plant will enter into a resting phase where less water and nutrients are needed.
-        </p>
-        <p>
+        </div>
+        <div class="value-desc">
           Repotting a plant into a bigger pot can give it more room to expand, but it can also be stressful for a plant to have its root
           system disturbed.
-        </p>
+        </div>
       </div>
-
-      <h2>Plant categories</h2>
-      <p>
-        here, 2 or 3 different plant categories will be presented with their descriptions, identifications, example lists and corresponding
-        ranges of normal values
-      </p>
     </div>
   </div>
 </div>

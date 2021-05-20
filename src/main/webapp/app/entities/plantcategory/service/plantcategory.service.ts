@@ -142,7 +142,9 @@ export class PlantcategoryService {
       )
     );
     // hardcoded values for one Plantcategory
-    arrayResponse.push(new Plantcategory(4, 'Unspecified'));
+    arrayResponse.push(
+      new Plantcategory(4, 'Unspecified', 'For the plant that doesn’t fit into any of the other plant categories. No recommended values.')
+    );
 
     return arrayResponse;
   }

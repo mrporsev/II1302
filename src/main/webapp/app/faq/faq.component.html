@@ -2,72 +2,124 @@
   <body>
     <div class="bg">
       <!--<img src="../../content/images/pots-716579_1920.svg" id="#pots-716579_1920" alt="">-->
-      <h1 :class="display-3" style="color: #006600">FAQ!</h1>
+      <h1 :class="display-3" style="color: #006600; text-align: center; margin: 10px">FAQ!</h1>
       <div></div>
 
-      <div></div>
-      <div class="text">
-        <span>
-          <strong>
-            <ol type="1">
-              <li>
-                <dt>How to get started with Plantalyzer, what to do when you have just become a user?</dt>
-                <dd>All you need is a valid e-mail address to could create an account in Plantalyzer</dd>
-              </li>
+      <div>
+        <p class="text">
+          <span>
+            <strong>
+              <ol type="1">
+                <div class="sections" style="font-weight: bold">SETUP & INSTALLATION</div>
 
-              <li>
-                <dt>how do you get a sensor?</dt>
-                <dd>
-                  we have not built a real sensor for Plantalyzer because we have no TIEDB students in the group, we will instead fake data
-                  for the sensor.
-                </dd>
-              </li>
-              <li>
-                <dt>How will user information be stored?</dt>
-                <dd>The user information will be saved in the database.</dd>
-              </li>
-              <li>
-                <dt>Is there any customer support to Plantalyzer?</dt>
-                <dd>unfortunately we do not provide this service</dd>
-              </li>
+                <li>
+                  <dt>How to get started with Plantalyzer, what I do when I have just become a user?</dt>
+                  <dd>
+                    all you need to do after creating an account with us is to register your plants in the sensor page and put a sensor to
+                    each plant
+                  </dd>
+                </li>
+                <li>
+                  <dt>how do I get a sensor?</dt>
+                  <dd>
+                    we have not built a real sensor for Plantalyzer because we have no TIEDB students in the group, we will instead fake
+                    data for the sensor.
+                  </dd>
+                </li>
 
-              <li>
-                <dt>Is it possible to change the limit values of the plant to get an alarm?</dt>
-                <dd>No, this option can only made by admins</dd>
-              </li>
+                <li>
+                  <dt>how much does it cost (the sensor and the application)?</dt>
 
-              <li>
-                <dt>How do the user get an alarm if a measured value is abnormal?</dt>
-                <dd>The user will get a notice in the personal telling which plant you will need to care about</dd>
-              </li>
+                  <dd>
+                    Because we do not have a real sensor so we have no ides what the sensor cost but the application does not cost any
+                    thing, it is free.
+                  </dd>
+                </li>
+                <li>
+                  <dt>How to get started with Plantalyzer, what to do when you have just become a user?</dt>
+                  <dd>All you need is a valid e-mail address to could create an account in Plantalyzer</dd>
+                </li>
 
-              <li>
-                <dt>How to get started with Plantalyzer, what I do when I have just become a user?</dt>
-                <dd>
-                  all you need to do after creating an account with us is to register your plants in the sensor page and put a sensor to
-                  each plant
-                </dd>
-              </li>
+                <li>
+                  <dt>how do I set up an account?</dt>
 
-              <li>
-                <dt>Is it possible to run the sensor on your own server or are you dependent on the website?</dt>
-                <dd>You are dependent on the website</dd>
-              </li>
-            </ol>
-          </strong>
-        </span>
+                  <dd>The steps are shown below the question list</dd>
+                </li>
+
+                <li>
+                  <dt>how do I register the sensor to my account?</dt>
+                  <dd>Click on account in the navbar --> sensor ---> add new sensor</dd>
+                </li>
+                <li>
+                  <dt>Is there any customer support to Plantalyzer?</dt>
+                  <dd>unfortunately we do not provide this service</dd>
+                </li>
+              </ol>
+              <ol type="1">
+                <div class="sections" style="font-weight: bold">USE & MAINTAINENCE</div>
+
+                <li>
+                  <dt>can I change the name of a sensor?</dt>
+                  <dd>Yes, go to the sensor page, click on the sensor ---> edit</dd>
+                </li>
+                <li>
+                  <dt>what are the recommended values?</dt>
+                  <dd>
+                    The answer to this question is board because the recommended values depend on the kind of this plant, for more info
+                    about the different kinds of plants and their recommended values please visit
+                    <a (click)="toPlantCare()" :class="alert-link" style="color: #003300"> Plant care page</a>
+                    <!--                    <a href="http://localhost:9000/plantcare">Plant care page</a>-->
+                  </dd>
+                </li>
+              </ol>
+              <ol type="1">
+                <div class="sections" style="font-weight: bold">INTEGRITY AND DATA PRIVACY</div>
+
+                <li>
+                  <dt>How will user information be stored?</dt>
+                  <dd>The user information will be saved in our database.</dd>
+                </li>
+
+                <li>
+                  <dt>what user information is stored and for how long?</dt>
+                  <dd>
+                    Username, password and information about the user's plant/s. As long as we have no real customer so we have not planned
+                    how long we will save the user's information.
+                  </dd>
+                </li>
+                <li>
+                  <dt>will user information be sold or given to third parties?</dt>
+                  <dd>Your personal data will not be sold or shared with third-parties</dd>
+                </li>
+
+                <li>
+                  <dt>if I want to keep my data under my own control, can I run the sensor on my own server?</dt>
+                  <dd>unfortunately not, you have to use both the sensor and Plantalyzer</dd>
+                </li>
+              </ol>
+            </strong>
+          </span>
+        </p>
+
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
+        <div></div>
+        <div>
+          &nbsp;
+          <div class="steps">
+            <h2 style="text-align: center"><strong> How To Use Plantalyzer?!</strong></h2>
+            <span class="text">
+              <strong>
+                <div>To use plantalyzer you will only need:</div>
+                <div>1-valid email address.</div>
+                <div>2-websurfer.</div>
+              </strong>
+            </span>
+          </div>
+        </div>
+        <div>&nbsp;<img src="content/images/Screenshot 2021-05-12 at 12.37.20.png" alt="Italian Trulli" /></div>
       </div>
     </div>
   </body>

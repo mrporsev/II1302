@@ -13,7 +13,7 @@ import jsonTest from '../_files/jsonTest.json';
   templateUrl: './sensor.component.html',
 })
 export class SensorComponent implements OnInit {
-  sensors?: ISensor[];
+  sensors?: ISensor[];                             //array holding collection of sensors
   isLoading = false;
   jsonTestData:{UVScale:string, Temperature:string, SoilMoisture:string, Humidity:string}[] = jsonTest;
 

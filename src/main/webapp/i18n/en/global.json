@@ -10,6 +10,7 @@
         "sensor": "Sensor",
         "annotation": "Annotation",
         "info": "Info",
+        "plantcategory": "Plantcategory",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

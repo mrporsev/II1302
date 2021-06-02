@@ -1,5 +1,4 @@
 import { IUser } from 'app/entities/user/user.model';
-import { IAnnotation } from 'app/entities/annotation/annotation.model';
 
 export interface ISensor {
   id?: number;
@@ -8,7 +7,6 @@ export interface ISensor {
   light?: string | null;
   name?: string | null;
   user?: IUser | null;
-  annotations?: IAnnotation[] | null;
 }
 
 export class Sensor implements ISensor {
@@ -18,8 +16,7 @@ export class Sensor implements ISensor {
     public soilMoisture?: string | null,
     public light?: string | null,
     public name?: string | null,
-    public user?: IUser | null,
-    public annotations?: IAnnotation[] | null
+    public user?: IUser | null
   ) {}
 }
 

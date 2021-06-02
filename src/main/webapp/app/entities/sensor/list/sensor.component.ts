@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ISensor } from '../sensor.model';
@@ -15,7 +15,7 @@ import jsonTest from '../_files/jsonTest.json';
 export class SensorComponent implements OnInit {
   sensors?: ISensor[];                             //array storing collection of sensors for current user
   isLoading = false;
-  jsonTestData:{UVScale:string, Temperature:string, SoilMoisture:string, Humidity:string}[] = jsonTest;
+  jsonTestData: { UVScale: string; Temperature: string; SoilMoisture: string; Humidity: string }[] = jsonTest;
 
   constructor(protected sensorService: SensorService, protected modalService: NgbModal, private httpClient: HttpClient) {}
 
@@ -36,8 +36,8 @@ export class SensorComponent implements OnInit {
   ngOnInit(): void {
     this.loadAll();
     //this.callApi();
-    console.log(this.jsonTestData[2].SoilMoisture);
-    console.log(this.jsonTestData);
+    // console.log(this.jsonTestData[2].SoilMoisture);
+    // console.log(this.jsonTestData);
   }
 
   /*

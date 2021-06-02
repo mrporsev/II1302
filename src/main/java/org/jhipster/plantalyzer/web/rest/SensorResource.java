@@ -7,12 +7,10 @@ import java.util.Objects;
 import java.util.Optional;
 import org.jhipster.plantalyzer.domain.Sensor;
 import org.jhipster.plantalyzer.repository.SensorRepository;
-import org.jhipster.plantalyzer.security.SecurityUtils;
 import org.jhipster.plantalyzer.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -164,15 +162,11 @@ public class SensorResource {
      *
      * @param id the id of the sensor to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the sensor, or with status {@code 404 (Not Found)}.
-     * Written by: Porsev & Eddie
      */
     @GetMapping("/sensors/{id}")
-    public ResponseEntity<?> getSensor(@PathVariable Long id) {
+    public ResponseEntity<Sensor> getSensor(@PathVariable Long id) {
         log.debug("REST request to get Sensor : {}", id);
         Optional<Sensor> sensor = sensorRepository.findById(id);
-        if (sensor.isPresent() && sensor.get().getUser() != null && !sensor.get().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
-        }
         return ResponseUtil.wrapOrNotFound(sensor);
     }
 

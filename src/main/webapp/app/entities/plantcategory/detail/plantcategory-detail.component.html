@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="plantcategory">
+      <h2 data-cy="plantcategoryDetailsHeading"><span jhiTranslate="plantalyzerApp.plantcategory.detail.title">Plantcategory</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ plantcategory.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.name">Name</span></dt>
+        <dd>
+          <span>{{ plantcategory.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.description">Description</span></dt>
+        <dd>
+          <span>{{ plantcategory.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.example">Example</span></dt>
+        <dd>
+          <span>{{ plantcategory.example }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.moisture_max">Moisture Max</span></dt>
+        <dd>
+          <span>{{ plantcategory.moisture_max }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.moisture_min">Moisture Min</span></dt>
+        <dd>
+          <span>{{ plantcategory.moisture_min }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.light_max">Light Max</span></dt>
+        <dd>
+          <span>{{ plantcategory.light_max }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.light_min">Light Min</span></dt>
+        <dd>
+          <span>{{ plantcategory.light_min }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.humidity_max">Humidity Max</span></dt>
+        <dd>
+          <span>{{ plantcategory.humidity_max }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.humidity_min">Humidity Min</span></dt>
+        <dd>
+          <span>{{ plantcategory.humidity_min }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.temperature_max">Temperature Max</span></dt>
+        <dd>
+          <span>{{ plantcategory.temperature_max }}</span>
+        </dd>
+        <dt><span jhiTranslate="plantalyzerApp.plantcategory.temperature_min">Temperature Min</span></dt>
+        <dd>
+          <span>{{ plantcategory.temperature_min }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/plantcategory', plantcategory.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

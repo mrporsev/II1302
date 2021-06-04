@@ -47,10 +47,9 @@
             <option [ngValue]="null"></option>
             <option
               [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
-              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
-              [hidden]="!(userOption.id === editForm.get('user')!.value?.id)"
+              *ngFor="let userOption of usersSharedCollection; index as i; trackBy: trackUserById"
             >
-              {{ userOption.login }}
+             {{ userOption.login }}
             </option>
           </select>
         </div>
